@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
   end 
 
   def index
-    render layout: false
+    render layout: false if request.xhr?
   end
 
   private 

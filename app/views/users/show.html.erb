@@ -5,18 +5,12 @@
   <div class='large-4 small-9  columns'>
     <%= form_for([@user, @user.tweets.build]) do |f| %>
         <%= f.text_area :description, :placeholder => "Tweet...." %>
-        <%= f.submit %>
+        <%= f.submit 'Tweet', class: 'small  button  radius  left' %>
     <% end %> 
   </div>
   <div class="large-8  columns">
     <h3>Tweets....</h3>
     <hr>
-    <div class="large-6  columns" id="tweet_list">
-      <% current_user.tweets.reverse.each do |tweet| %>
-        <div>
-          <%= tweet.description %>
-        </div>
-      <% end %>
-    </div>
+    <%= render partial: "tweets/user_tweets" %>
   </div>
 </div>
