@@ -1,0 +1,7 @@
+<div class="large-6  columns" id="tweet_list">
+  <% current_user.tweets.reverse.each do |tweet| %>
+    <div>
+      <%= tweet.description %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,26 @@
+<div class='row'>
+  <h1 class='subheader'>Sign Up</h1>
+  <%= form_for @user do |f|  %>
+    <% if @user.errors.any? %>
+      <div class="error_message">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @user.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class='large-4 small-9'>
+      <%= f.label :username  %>
+      <%= f.text_field :username  %>
+    </div>
+    <div class='large-4 small-9'>
+      <%= f.label :password  %>
+      <%= f.password_field :password  %>
+    </div>
+    <%= f.submit 'Sign Up', class: 'button radius left' %>
+  <% end %>
+  <%= link_to 'Log in', log_in_path, class: 'button radius' %>
+</div>
