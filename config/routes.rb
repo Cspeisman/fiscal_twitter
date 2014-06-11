@@ -4,6 +4,8 @@ FoundationTest::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'users#new'
+  get 'users/search' => 'users#search'
+  post 'users/search' => 'users#search'
   resources :users do 
     resources :tweets
   end

@@ -12,8 +12,22 @@
   </head>
 
   <body>
+      
     <% if current_user %>
-      <%= link_to 'Sign Out', log_out_path %>
+      <div class='row'>
+        <div class='large-4 column'>
+          <%= link_to 'Sign Out', log_out_path %>
+        </div>
+        <div class='large-5 column'>
+          <%= form_tag('/users/search', method: 'post')   do %>
+            <div class='large-9 column'>
+              
+            <%= text_field_tag :username, nil, placeholder: 'Search for user..' %>
+            </div>
+            <%= submit_tag "Search", class:'button tiny large-3'  %>
+            <% end %>
+        </div>
+      </div>
     <% end  %> 
 
     <%= yield %>
